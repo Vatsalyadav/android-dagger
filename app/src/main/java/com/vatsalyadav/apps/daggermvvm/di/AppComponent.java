@@ -11,7 +11,9 @@ import dagger.android.support.AndroidSupportInjectionModule;
 
 @Component(
         modules = {
-                AndroidSupportInjectionModule.class
+                AndroidSupportInjectionModule.class,
+                ActivityBuildersModule.class,
+                AppModule.class
         }
 )
 public interface AppComponent extends AndroidInjector<BaseApplication> {
@@ -20,8 +22,7 @@ public interface AppComponent extends AndroidInjector<BaseApplication> {
             // override Builder method
     interface Builder {
 
-        @BindsInstance
-            // if you want to bind a particular object through the instance at the time of its construction
+        @BindsInstance // if you want to bind a particular object through the instance at the time of its construction
         Builder application(Application application);
 
         AppComponent build(); // mandatory step
