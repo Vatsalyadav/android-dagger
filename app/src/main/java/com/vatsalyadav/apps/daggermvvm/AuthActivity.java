@@ -1,7 +1,10 @@
 package com.vatsalyadav.apps.daggermvvm;
 
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import android.widget.Toast;
+import android.widget.ImageView;
+
+import com.bumptech.glide.RequestManager;
 
 import javax.inject.Inject;
 
@@ -10,12 +13,21 @@ import dagger.android.support.DaggerAppCompatActivity;
 public class AuthActivity extends DaggerAppCompatActivity {
 
     @Inject
-    String ahahahahaha;
+    Drawable logo;
+
+    @Inject
+    RequestManager requestManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_auth);
-        Toast.makeText(this, ahahahahaha, Toast.LENGTH_LONG).show();
+        setLogo();
+    }
+
+    private void setLogo(){
+        requestManager
+                .load(logo)
+                .into((ImageView)findViewById(R.id.login_logo));
     }
 }
