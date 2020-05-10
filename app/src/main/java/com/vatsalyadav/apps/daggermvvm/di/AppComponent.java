@@ -3,6 +3,7 @@ package com.vatsalyadav.apps.daggermvvm.di;
 import android.app.Application;
 
 import com.vatsalyadav.apps.daggermvvm.BaseApplication;
+import com.vatsalyadav.apps.daggermvvm.viewmodels.ViewModelProviderFactory;
 
 import javax.inject.Singleton;
 
@@ -16,7 +17,8 @@ import dagger.android.support.AndroidSupportInjectionModule;
         modules = {
                 AndroidSupportInjectionModule.class,
                 ActivityBuildersModule.class,
-                AppModule.class
+                AppModule.class,
+                ViewModelProviderFactory.class,
         }
 )
 public interface AppComponent extends AndroidInjector<BaseApplication> {
