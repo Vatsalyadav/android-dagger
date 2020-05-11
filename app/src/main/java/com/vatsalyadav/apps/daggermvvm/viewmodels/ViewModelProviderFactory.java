@@ -7,8 +7,9 @@ import javax.inject.Provider;
 
 import androidx.lifecycle.ViewModel;
 import androidx.lifecycle.ViewModelProvider;
+import dagger.Module;
 
-
+@Module
 public class ViewModelProviderFactory implements ViewModelProvider.Factory {
 
     private static final String TAG = "ViewModelProviderFactor";
